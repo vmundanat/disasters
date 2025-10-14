@@ -1,0 +1,830 @@
+/* index.css — for DISASTERS homepage */
+
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap');
+
+/* Reset & Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: poppins;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+
+/* ---------------------------------------- */
+/* NAV BAR STYLES — DO NOT MODIFY */
+/* ---------------------------------------- */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+  z-index: 1000;
+
+  /* Frosted glass styling */
+  background: rgba(255, 255, 255, 0.1); /* semi-transparent white */
+  backdrop-filter: blur(12px);          /* frosted effect */
+  -webkit-backdrop-filter: blur(12px);  /* for Safari */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* subtle glass edge */
+
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('./images/header.webp'); /* replace with your bg image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.75;
+  z-index: -1;
+}
+
+/* Push main content below the fixed header */
+body {
+  font-family: 'Manjari', sans-serif;
+  background: linear-gradient(105deg, #93c8fa, #fbd3bc);
+  color: #122A48;
+  line-height: 1.6;
+  padding-top: 90px;
+}
+
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+  z-index: 1000;
+
+  /* Frosted glass styling */
+  background: rgba(255, 255, 255, 0.1); /* semi-transparent white */
+  backdrop-filter: blur(12px);          /* frosted effect */
+  -webkit-backdrop-filter: blur(12px);  /* for Safari */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* subtle glass edge */
+
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('./images/header.webp'); /* replace with your bg image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.75;
+  z-index: -1;
+}
+
+/* Push main content below the fixed header */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f5f6f7;
+  color: #122A48;
+  padding-top: 90px;
+  line-height: 1.6;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  flex-grow: 1;
+  padding: 0;
+  margin: 0;
+}
+
+nav img {
+  height: 50px;
+  width: auto;
+}
+
+.l-nav {
+  margin-right: -3rem;
+}
+
+.r-nav {
+  margin-left: -3rem;
+}
+
+nav ul li {
+  font-size: 2.5rem;
+  padding: 10px 40px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color:#ffffff;
+}
+
+nav ul .center {
+  font-family: 'Racing Sans One', sans-serif;
+  font-size: 7rem;
+  font-weight: bold;
+  flex-grow: 1;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.left {
+  margin-left: auto;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  font-weight: light;
+}
+
+.right {
+  margin-right: auto;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  font-weight: light;
+}
+
+li {
+  display: inline;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 2rem;
+  text-align: center;
+  padding: auto;
+  margin-bottom: 3;
+}
+
+h2 {
+  display: inline;
+  text-align: center;
+  font-family: 'Racing Sans One', sans-serif;
+  color: #122A48;
+  font-size: 4rem;
+  font-weight: 500;
+  letter-spacing: 8px;
+  margin-bottom: 1rem;
+}
+
+li a {
+  text-decoration: none;
+  padding: 50px 50px;
+}
+
+
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  font-size: 3rem;
+  color: white; /* or bright colour to test */
+  cursor: pointer;
+  z-index: 1100;
+  padding: 1rem;
+  position:relative;
+}
+
+.mobile-title {
+  display: none;
+  font-family: 'Racing Sans One', sans-serif;
+  color: #122A48;
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+
+/* Responsive Nav */
+@media screen and (max-width: 1024px) {
+  /* Hide desktop-only elements */
+  .l-nav,
+  .r-nav,
+  nav ul,
+  nav ul .center {
+    display: none !important;
+  }
+
+  /* Show mobile title */
+  .mobile-title {
+    display: block;
+    font-family: 'Racing Sans One', sans-serif;
+    color: #122A48;
+    font-size: 4rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin: 0 1rem 0 0;
+  }
+
+  /* Hamburger icon styling */
+  .hamburger {
+    display: block;
+    font-size: 3rem;
+    color: #ffffff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+    padding: 1rem;
+    margin: 0 0 0 1rem;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the flex items horizontally */
+    padding: 0 30px;
+  }
+
+  /* Use a wrapper for centering */
+  .mobile-nav-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Dropdown menu styles */
+  nav ul.active {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100vw;
+    background-color: #122a48;
+    z-index: 1000;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  nav ul.active li {
+    display: block;
+    width: 100%;
+    padding: 1.2rem 0;
+  }
+
+  nav ul.active li a {
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    padding: 2rem;
+    text-align: center; /* Center the dropdown text */
+  }
+}
+
+/* Hide mobile title on desktop */
+.mobile-title, .mobile-nav-center {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .mobile-title, .mobile-nav-center {
+    display: flex;
+  }
+}
+
+.transition{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.transition-row{
+  flex: 1;
+  display: flex;
+}
+
+.transition-row.row-1 .block {
+  transform-origin: top;
+}
+
+.transition-row.row-2 .block {
+  transform-origin: bottom;
+}
+
+.block{
+  flex: 1;
+  background: #d2e7fb;
+  transform: scaleY(1);
+  will-change: transform;
+}
+
+/* ---------------------------------------- */
+/* HOMEPAGE CONTENT SECTIONS (ONLY THESE ADDED) */
+/* ---------------------------------------- */
+
+section {
+  padding: 6rem 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-heading {
+  font-size: 4rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.section-subheading {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-family: 'Oswald', sans-serif;
+  color: #3c5c70;
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.checklist li::before {
+  content: '✓';
+  color: #2d6a4f;
+  margin-right: 1rem;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #122A48;
+  color: white;
+  padding: 1.5rem 3rem;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 2rem;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #0d1c32;
+}
+
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.benefits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.benefit-box {
+  flex: 1 1 30%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.benefit-box h3 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin-top: 4rem;
+}
+
+.testimonial {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+  border-radius: 12px;
+}
+
+.testimonial img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name{
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.faq {
+  margin-top: 2rem;
+}
+
+.faq-item {
+  margin-bottom: 2rem;
+}
+
+.faq-item h4 {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.faq-item p {
+  font-size: 1.8rem;
+  margin-top: 0.5rem;
+  color: #333;
+}
+
+footer {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: #122A48;
+  color: white;
+  font-size: 1.6rem;
+}
+
+
+/* ==== HOMEPAGE FIXES & CLEANUP ==== */
+
+/* Section Headings */
+.section-heading {
+  font-size: 4.5rem;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 2rem;
+  font-family: 'Racing Sans One', sans-serif;
+}
+
+.section-subheading {
+  text-align: center;
+  font-size: 2rem;
+  font-family: 'Oswald', sans-serif;
+  color: #233b53;
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+}
+
+/* Checklist */
+.checklist {
+  list-style: none;
+  font-size: 2rem;
+  text-align: left;
+  margin: 2rem auto;
+  max-width: 800px;
+  line-height: 1.6;
+  color: #122A48;
+}
+
+.checklist li {
+  margin-bottom: 1.5rem;
+}
+
+.checklist li::before {
+  content: '✅';
+  margin-right: 1rem;
+  font-size: 2.2rem;
+}
+
+/* CTA Button */
+.cta-button {
+  display: inline-block;
+  background: #122A48;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  padding: 1.2rem 2.5rem;
+  text-decoration: none;
+  margin-top: 2rem;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #0e1f36;
+}
+
+.cta-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+/* Testimonial Section */
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.testimonial {
+  background: rgba(255, 255, 255, 0.3);
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  font-size: 1.8rem;
+  color: #122A48;
+  line-height: 1.6;
+}
+
+.testimonial span {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #233b53;
+  font-size: 1.5rem;
+}
+
+/* Benefits Section */
+.benefits {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.benefit-box {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 12px;
+  padding: 2rem;
+  flex: 1 1 300px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.benefit-box h3 {
+  font-family: 'Racing Sans One', sans-serif;
+  font-size: 2.2rem;
+  color: #122A48;
+  margin-bottom: 1rem;
+}
+
+.benefit-box p {
+  font-size: 1.6rem;
+  color: #3c5c70;
+}
+
+/* Image Fix */
+img.main-image {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 2rem auto;
+  border-radius: 12px;
+}
+
+/* ===== GLASSY SECTIONS ===== */
+.glass {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-radius: 18px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  padding: 5rem 3rem;
+  margin: 4rem auto;
+  max-width: 1100px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
+
+/* ===== TEXT STYLING ===== */
+.section-heading {
+  font-family: 'Racing Sans One', sans-serif;
+  font-size: 3.8rem;
+  text-align: center;
+  color: #0e1f36;
+  margin-bottom: 2rem;
+}
+
+.section-subheading {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  text-align: center;
+  color: #3c5c70;
+  margin-bottom: 3rem;
+}
+
+/* ===== CHECKLIST ===== */
+.checklist {
+  list-style: none;
+  font-size: 1.8rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  color: #122A48;
+}
+
+.checklist li {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+}
+
+.checklist li::before {
+  content: "✔";
+  color: #0e1f36;
+  font-weight: bold;
+  margin-right: 1rem;
+}
+
+/* ===== CTA BUTTON ===== */
+.cta-button {
+  display: inline-block;
+  background: #0e1f36;
+  color: white;
+  padding: 1.2rem 2.8rem;
+  border-radius: 10px;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.cta-button:hover {
+  background: #142c4f;
+}
+
+/* ===== BENEFITS ===== */
+.benefits {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.benefit-box {
+  background: rgba(255, 255, 255, 0.45);
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  padding: 2.5rem;
+  flex: 1 1 280px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.3s;
+}
+
+.benefit-box:hover {
+  transform: translateY(-5px);
+}
+
+.benefit-box h3 {
+  font-family: 'Racing Sans One';
+  font-size: 2.2rem;
+  color: #122A48;
+  margin-bottom: 1rem;
+}
+
+.benefit-box p {
+  font-size: 1.6rem;
+  color: #3c5c70;
+}
+
+/* ===== TESTIMONIALS ===== */
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  max-width: 800px;
+  margin: 3rem auto;
+}
+
+.testimonial {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.testimonial img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name {
+  font-weight: bold;
+  font-size: 1.8rem;
+  color: #0e1f36;
+}
+
+/* ===== FAQ ===== */
+.faq-item h4 {
+  font-size: 2rem;
+  color: #0e1f36;
+  margin-bottom: 0.5rem;
+}
+
+.faq-item p {
+  font-size: 1.6rem;
+  color: #3c5c70;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== MEDIA FIXES ===== */
+@media (max-width: 768px) {
+  .glass {
+    padding: 3rem 2rem;
+  }
+
+  .section-heading {
+    font-size: 3rem;
+  }
+
+  .section-subheading {
+    font-size: 1.8rem;
+  }
+}
+
+.footer {
+  background: linear-gradient(90deg, #b6c9ff2c, #aec9ff1f);
+  backdrop-filter: blur(12px);
+  padding: 3rem 2rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  color: #0d1b2a;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+
+
+.footer-brand h2 {
+  font-family: 'Racing Sans One', sans-serif;
+  font-size: 5rem;
+  font-weight: bold;
+  flex-grow: 1;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.footer-brand p {
+  color: #506178;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.footer .social {
+  color: #0e1f36;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 1rem;
+  color: #506178;
+}

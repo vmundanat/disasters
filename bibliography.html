@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BIBLIOGRAPHY | DISASTERS</title>
+  <style>
+    .pdf-wrapper {
+  display: flex;
+  justify-content: center;   /* centre horizontally */
+  margin: 2rem 0;            /* add some space above/below */
+}
+
+#myPDF {
+  width: 85vw;               /* 85% of viewport width */
+  max-width: 1200px;         /* optional cap */
+  height: 975px;             /* or use 80vh if you want it to scale */
+  border: none;              /* remove default border if you like */
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* optional styling */
+}
+
+@media (max-width: 768px) {
+  #myPDF {
+    width: 95vw;
+    height: 70vh;
+  }
+}
+  </style>
+  <link rel="stylesheet" href="737max.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <img src="./images/official-logo.webp" alt="Official Logo" class="l-nav" />
+
+      <ul>
+        <li class="left"><a href="index.html">Home</a></li>
+        <li class="left"><a href="contact.html">Contact</a></li>
+        <li class="center"><h2>DISASTERS</h2></li>
+        <li class="right"><a href="disasters.html">Disasters</a></li>
+        <li class="right"><a href="about.html">About</a></li>
+      </ul>
+
+      <span class="mobile-title">DISASTERS</span>
+      <div class="hamburger" onclick="toggleMenu()">☰</div>
+      <img src="./images/simple-logo.webp" alt="Simple Logo" class="r-nav" />
+    </nav>
+  </header>
+
+  <!-- Transition Blocks -->
+  <div class="transition">
+    <div class="transition-row row-1">
+      <div class="block"></div><div class="block"></div><div class="block"></div><div class="block"></div><div class="block"></div>
+    </div>
+    <div class="transition-row row-2">
+      <div class="block"></div><div class="block"></div><div class="block"></div><div class="block"></div><div class="block"></div>
+    </div>
+  </div>
+
+  <!-- Blog Article -->
+  <main class="blog-article">
+    <div class="article-header">
+      
+      <h1>BIBILIOGRAPHY | WORKS CITED</h1>
+      <p class="meta">
+        <span>Published on: 27th of September, 2025</span>
+        <br>
+        <span class="IC">PLease refer to the works cited below</span> | 
+        <span class="IC">27/09/2025</span>
+      </p>
+      <img src="images/bibliography.webp" alt="Japan Airlines Flight 123 (JAL123)" class="article-img">
+    </div>
+
+    <article class="article-content">
+
+      <h2>Introduction</h2>
+      <p>
+       DISASTERS by Vaibhav Mundanat, is a student run site (by Vaibhav Mundanat). I have tried my best to get the most reputable sources and use factual information to help people over come their aviophobia. Below are some of the sources of the images, information, and other references I have used for my IB MYP Year 5, Personal Project Submission.</p>
+
+      <hr>
+
+      <br>
+
+
+      <br>
+
+      <h2>Bibliography</h2>
+
+      <div class="pdf-wrapper">
+      <iframe id="myPDF" src="./documents/Personal_Project_Bibliography.pdf"></iframe>
+      </div>
+
+    </article>
+
+      <footer class="footer">
+  <div class="footer-content">
+    <div class="footer-brand">
+      <h2>DISASTERS</h2>
+      <h4>Exploring the lessons, history, and resilience behind aviation disasters worldwide.</h4>
+    </div>
+<br>
+    <div class="footer-social">
+      <h3> <a href="https://www.instagram.com/disasters.vm/">Follow My Project</a></h3>
+    </div>
+  </div>
+<br>
+  <div class="footer-bottom">
+    <h4>© 2025 <strong>DISASTERS</strong>. All rights reserved.</h4>
+  </div>
+</footer>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

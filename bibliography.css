@@ -1,0 +1,431 @@
+/* ---------------- GLOBAL STYLES (copied from disasters.css) ---------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Racing+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: poppins;
+}
+
+html {
+  font-size: 10px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+  z-index: 1000;
+
+  /* Frosted glass styling */
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('./images/header.webp');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.75;
+  z-index: -1;
+}
+
+/* Push main content below the fixed header */
+body {
+  margin: 0;
+  padding-top: 90px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  flex-grow: 1;
+  padding: 0;
+  margin: 0;
+}
+
+nav img {
+  height: 50px;
+  width: auto;
+}
+
+.l-nav {
+  margin-right: -3rem;
+}
+
+.r-nav {
+  margin-left: -3rem;
+}
+
+nav ul li {
+  font-size: 2.5rem;
+  padding: 10px 40px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color:#ffffff;
+}
+
+nav ul .center {
+  font-family: 'Racing Sans One', sans-serif;
+  font-size: 7rem;
+  font-weight: bold;
+  flex-grow: 1;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.left {
+  margin-left: auto;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  font-weight: light;
+}
+
+.right {
+  margin-right: auto;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  font-weight: light;
+}
+
+li {
+  display: inline;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 2rem;
+  text-align: center;
+  padding: auto;
+  margin-bottom: 3;
+}
+
+h2 {
+  display: inline;
+  text-align: center;
+  font-family: 'Racing Sans One', sans-serif;
+  color: #122A48;
+  font-size: 4rem;
+  font-weight: 500;
+  letter-spacing: 8px;
+  margin-bottom: 1rem;
+}
+
+li a {
+  text-decoration: none;
+  padding: 50px 50px;
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  z-index: 1100;
+  padding: 1rem;
+  position:relative;
+}
+
+.mobile-title {
+  display: none;
+  font-family: 'Racing Sans One', sans-serif;
+  color: #122A48;
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+
+/* Responsive Nav */
+@media screen and (max-width: 1024px) {
+  .l-nav,
+  .r-nav,
+  nav ul,
+  nav ul .center {
+    display: none !important;
+  }
+
+  .mobile-title {
+    display: block;
+    font-family: 'Racing Sans One', sans-serif;
+    color: #122A48;
+    font-size: 4rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin: 0 1rem 0 0;
+  }
+
+  .hamburger {
+    display: block;
+    font-size: 3rem;
+    color: #ffffff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+    padding: 1rem;
+    margin: 0 0 0 1rem;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 30px;
+  }
+
+  nav ul.active {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100vw;
+    background-color: #122a48;
+    z-index: 1000;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  nav ul.active li {
+    display: block;
+    width: 100%;
+    padding: 1.2rem 0;
+  }
+
+  nav ul.active li a {
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    padding: 2rem;
+    text-align: center;
+  }
+}
+
+/* Hide mobile title on desktop */
+.mobile-title {
+  display: none;
+}
+
+.transition{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.transition-row{
+  flex: 1;
+  display: flex;
+}
+
+.transition-row.row-1 .block {
+  transform-origin: top;
+}
+
+.transition-row.row-2 .block {
+  transform-origin: bottom;
+}
+
+.block{
+  flex: 1;
+  background: #d2e7fb;
+  transform: scaleY(1);
+  will-change: transform;
+}
+
+
+/* ---------------- TENERIFE BLOG STYLES ---------------- */
+
+.blog-article {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0px 6px 20px rgba(0,0,0,0.1);
+}
+
+.article-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.article-header h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: #122a48;
+  margin-bottom: 10px;
+}
+
+.article-header .meta {
+  font-size: 1.4rem;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.article-header .meta .IC {
+  font-size: 1.6rem;
+  color: #000000;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.article-img {
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  margin: 20px 0;
+}
+
+.article-content h2 {
+  font-family:'Oswald', sans-serif;
+  font-size: 2.2rem;
+  color: #122a48;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.article-content h3 {
+  font-family:'Oswald', sans-serif;
+  font-size: 1.8rem;
+  color: #122a48;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.article-content p {
+  font-size: 1.6rem;
+  line-height: 1.7;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* More Sources Box */
+.more-sources {
+  margin-top: 40px;
+  padding: 20px;
+  background: #f4f6fa;
+  border-left: 5px solid #122a48;
+  border-radius: 6px;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.08);
+}
+
+.more-sources h2 {
+  font-family:'Oswald', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #122a48;
+}
+
+.more-sources ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+}
+
+.more-sources li {
+  text-align: center;
+}
+
+.more-sources a {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #1a4f8b;
+  transition: color 0.2s ease;
+}
+
+.more-sources a:hover {
+  color: #0d2c50;
+  text-decoration: underline;
+}
+
+
+.footer {
+  background: linear-gradient(90deg, #b6c9ff2c, #aec9ff1f);
+  backdrop-filter: blur(12px);
+  padding: 3rem 2rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  color: #0d1b2a;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+
+
+.footer-brand h2 {
+  font-family: 'Racing Sans One', sans-serif;
+  font-size: 5rem;
+  font-weight: bold;
+  flex-grow: 1;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.footer-brand p {
+  color: #506178;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.footer .social {
+  color: #0e1f36;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 1rem;
+  color: #506178;
+}

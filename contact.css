@@ -1,0 +1,426 @@
+@import url('https://fonts.googleapis.com/css2?family=Racing+Sans+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Racing+Sans+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Manjari:wght@100;400;700&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: poppins;
+}
+
+html {
+  font-size: 10px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+  z-index: 1000;
+
+  /* Frosted glass styling */
+  background: rgba(255, 255, 255, 0.1); /* semi-transparent white */
+  backdrop-filter: blur(12px);          /* frosted effect */
+  -webkit-backdrop-filter: blur(12px);  /* for Safari */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2); /* subtle glass edge */
+
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url('./images/header.webp'); /* replace with your bg image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.75;
+  z-index: -1;
+}
+
+/* Push main content below the fixed header */
+body {
+  margin: 0;
+  padding-top: 90px; /* matches or slightly exceeds header height */
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  flex-grow: 1;
+  padding: 0;
+  margin: 0;
+}
+
+nav img {
+  height: 50px;
+  width: auto;
+}
+
+.l-nav {
+  margin-right: -3rem;
+}
+
+.r-nav {
+  margin-left: -3rem;
+}
+
+nav ul li {
+  font-size: 2.5rem;
+  padding: 10px 40px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color:#ffffff;
+}
+
+nav ul .center {
+  font-family: 'Racing Sans One', sans-serif;
+  font-size: 7rem;
+  font-weight: bold;
+  flex-grow: 1;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.left {
+  margin-left: auto;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  font-weight: light;
+}
+
+.right {
+  margin-right: auto;
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  font-weight: light;
+}
+
+li {
+  display: inline;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 2rem;
+  text-align: center;
+  padding: auto;
+  margin-bottom: 3;
+}
+
+h2 {
+  display: inline;
+  text-align: center;
+  font-family: 'Racing Sans One', sans-serif;
+  color: #122A48;
+  font-size: 4rem;
+  font-weight: 500;
+  letter-spacing: 8px;
+  margin-bottom: 1rem;
+}
+
+li a {
+  text-decoration: none;
+  padding: 50px 50px;
+}
+
+body{
+    font-family: 'Outfit';
+    background: linear-gradient(105deg, #93c8fa, #fbd3bc);
+}
+
+.contact-container{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.contact-left{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+}
+
+.contact-left-title h2{
+    font-weight: 600;
+    color: #122A48;
+    font-size: 40px;
+    margin-bottom: 5px;
+}
+
+.contact-left-title hr{
+    border: none;
+    width: 120px;
+    height: 5px;
+    background-color: #122A48;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.contact-inputs{
+    width: 400px;
+    height: 50px;
+    border: none;
+    outline: none;
+    padding-left: 25px;
+    font-weight: 500;
+    color: #666;
+    border-radius: 50px;
+}
+
+.contact-left textarea{
+    height: 140px;
+    padding-top: 15px;
+    border-radius: 20px;
+}
+
+.contact-inputs:focus{
+    border: 2px solid #122A48;
+}
+
+.contact-inputs::placeholder{
+    color: #a9a9a9;
+}
+
+.contact-left button{
+    display: flex;
+    align-items: center;
+    padding: 15px 30px;
+    font-size: 16px;
+    color: #fff;
+    gap: 10px;
+    border: 3px solid #122A48;
+    border-radius: 50px;
+    background: linear-gradient(270deg, #97cbff, #5f95c8);
+    cursor: pointer;
+}
+
+.contact-left button img{
+    height: 15px;
+}
+
+.contact-right img{
+    width: 500px;
+}
+
+@media (max-width:800px) {
+    .contact-inputs{
+        width: 80vw;
+    }
+    .contact-right{
+        display: none;
+    }
+}
+
+/* Hamburger Icon */
+.hamburger {
+  display: none;
+  font-size: 3rem;
+  color: white; /* or bright colour to test */
+  cursor: pointer;
+  z-index: 1100;
+  padding: 1rem;
+  position:relative;
+}
+
+.mobile-title {
+  display: none;
+  font-family: 'Racing Sans One', sans-serif;
+  color: #122A48;
+  font-size: 2.5rem;
+  font-weight: bold;
+  letter-spacing: 4px;
+}
+
+/* Responsive Nav */
+@media screen and (max-width: 1024px) {
+  /* Hide desktop-only elements */
+  .l-nav,
+  .r-nav,
+  nav ul,
+  nav ul .center {
+    display: none !important;
+  }
+
+  /* Show mobile title */
+  .mobile-title {
+    display: block;
+    font-family: 'Racing Sans One', sans-serif;
+    color: #122A48;
+    font-size: 4rem;
+    font-weight: bold;
+    letter-spacing: 4px;
+    margin: 0 1rem 0 0;
+  }
+
+  /* Hamburger icon styling */
+  .hamburger {
+    display: block;
+    font-size: 3rem;
+    color: #ffffff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+    padding: 1rem;
+    margin: 0 0 0 1rem;
+  }
+
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(12px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center the flex items horizontally */
+    padding: 0 30px;
+  }
+
+  /* Use a wrapper for centering */
+  .mobile-nav-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* Dropdown menu styles */
+  nav ul.active {
+    display: flex !important;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100vw;
+    background-color: #122a48;
+    z-index: 1000;
+    padding: 2rem 0;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  nav ul.active li {
+    display: block;
+    width: 100%;
+    padding: 1.2rem 0;
+  }
+
+  nav ul.active li a {
+    font-size: 2rem;
+    color: white;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    padding: 2rem;
+    text-align: center; /* Center the dropdown text */
+  }
+}
+
+/* Hide mobile title on desktop */
+.mobile-title, .mobile-nav-center {
+  display: none;
+}
+
+@media screen and (max-width: 1024px) {
+  .mobile-title, .mobile-nav-center {
+    display: flex;
+  }
+}
+
+.transition{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.transition-row{
+  flex: 1;
+  display: flex;
+}
+
+.transition-row.row-1 .block {
+  transform-origin: top;
+}
+
+.transition-row.row-2 .block {
+  transform-origin: bottom;
+}
+
+.block{
+  flex: 1;
+  background: #d2e7fb;
+  transform: scaleY(1);
+  will-change: transform;
+}
+
+.footer {
+  background: linear-gradient(90deg, #b6caffd7, #aec9ff1f);
+  backdrop-filter: blur(12px);
+  padding: 3rem 2rem 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  color: #0d1b2a;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+
+
+.footer-brand h2 {
+  font-family: 'Racing Sans One', sans-serif;
+  font-size: 5rem;
+  font-weight: bold;
+  flex-grow: 1;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.footer-brand p {
+  color: #506178;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.footer .social {
+  color: #0e1f36;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 1rem;
+  color: #506178;
+}
